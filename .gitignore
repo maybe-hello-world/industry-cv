@@ -5,7 +5,10 @@
 
 !index.html
 
-!tex/cv
+!tex/
+tex/*
+
+!tex/cv/
 !tex/fonts
 !tex/awesome-cv.cls
 !tex/cv.pdf
