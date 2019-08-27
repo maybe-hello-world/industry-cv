@@ -1,0 +1,13 @@
+# leave only index.html and tex folder with white-list of files in it
+*
+!.gitignore
+
+!index.html
+
+!tex/cv
+!tex/fonts
+!tex/awesome-cv.cls
+!tex/cv.pdf
+!tex/cv.tex
+!tex/fontawesome.sty
+!tex/profile.jpg
