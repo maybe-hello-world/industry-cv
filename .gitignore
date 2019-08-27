@@ -1,6 +1,7 @@
 # leave only index.html and tex folder with white-list of files in it
 *
 !.gitignore
+!README.md
 
 !index.html
 
