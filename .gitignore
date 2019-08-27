@@ -1,17 +1,31 @@
-# leave only index.html and tex folder with white-list of files in it
-*
+# white lists!
+
+# ignore anything here...
+/*
+
+# ...except gitignore, readme and index.html
 !.gitignore
 !README.md
-
 !index.html
 
+# do not ignore tex folder but its content
 !tex/
 tex/*
 
+# do not ignore tex/cv folder...
 !tex/cv/
-!tex/fonts
+!tex/cv/*
+
+# ...and fonts
+!tex/fonts/
+!tex/fonts/*
+
+# and also do not ignore some needed files
 !tex/awesome-cv.cls
 !tex/cv.pdf
 !tex/cv.tex
 !tex/fontawesome.sty
 !tex/profile.jpg
+
+
+
