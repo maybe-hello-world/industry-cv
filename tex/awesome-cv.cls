@@ -163,7 +163,7 @@
 %                Configuration for fonts
 %-------------------------------------------------------------------------------
 % Set the FontAwesome font to be up-to-date.
-%\newfontfamily\FA[Path=\@fontdir]{FontAwesome}
+\setfontfamily\FA[Path=\@fontdir]{FontAwesome}
 % Set font for header (default is Roboto)
 \newfontfamily\headerfont[
   Path=\@fontdir,
@@ -266,6 +266,11 @@
 \newcommand*{\lastname}[1]{\def\@lastname{#1}}
 \newcommand*{\familyname}[1]{\def\@lastname{#1}}
 \def\@familyname{\@lastname}
+
+
+% Define writer's birthdate
+% Usage: \birthdate{<birthdate>}
+\newcommand*{\birthdate}[1]{\def\@birthdate{#1}}
 
 % Define writer's address
 % Usage: \address{<address>}
@@ -391,7 +396,7 @@
 \newcommand{\acvHeaderAfterNameSkip}{.4mm}
 \newcommand{\acvHeaderAfterPositionSkip}{.4mm}
 \newcommand{\acvHeaderAfterAddressSkip}{-.5mm}
-\newcommand{\acvHeaderIconSep}{\space}
+\newcommand{\acvHeaderIconSep}{~~}
 \newcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 \newcommand{\acvHeaderAfterSocialSkip}{6mm}
 \newcommand{\acvHeaderAfterQuoteSkip}{5mm}
@@ -454,6 +459,7 @@
     \\[\acvHeaderAfterNameSkip]%
     \ifthenelse{\isundefined{\@position}}{}{\headerpositionstyle{\@position\\[\acvHeaderAfterPositionSkip]}}%
     \ifthenelse{\isundefined{\@address}}{}{\headeraddressstyle{\@address\\[\acvHeaderAfterAddressSkip]}}%
+    \ifthenelse{\isundefined{\@birthdate}}{}{\headeraddressstyle{\@birthdate\\[\acvHeaderAfterAddressSkip]}}
     \headersocialstyle{%
       \newbool{isstart}%
       \setbool{isstart}{true}%
@@ -659,7 +665,7 @@
   \begin{center}
     \setlength\tabcolsep{1ex}
     \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} r L{\textwidth * \real{0.9}}}
+    \begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}} r L{\textwidth * \real{0.9}}}
 }{%
     \end{tabular*}
   \end{center}
