@@ -724,6 +724,26 @@
 	\honordatestyle{#3} & \honorpositionstyle{#1} & \honorlocationstyle{#2} \\
 }
 
+% Env for open-source contributions
+\newenvironment{cvopensource}{%
+	\vspace{\acvSectionContentTopSkip}
+	\vspace{-2mm}
+	}{%
+}
+
+% Define a line for open source contribution
+% Usage: \cvopensourceentry{Repository name}{link to commits}{organization (maintainer)}{info (what you've done)}
+\newcommand*{\cvopensourceentry}[4]{%
+	\honorpositionstyle{\href{#2}{#1}} \makeatletter @ \makeatother \honortitlestyle{#3}
+	\honortitlestyle{#4}
+}
+
+% Define a line for open source contribution
+% Usage: \cvopensourceentry{Repository name}{link to commits}{organization (maintainer)}{info (what you've done)}
+\newcommand*{\cvopensourcesmallentry}[4]{%
+	\honorpositionstyle{\href{#2}{#1}} \makeatletter @ \makeatother \honortitlestyle{#3} | \honortitlestyle{#4} \\
+}
+
 
 %-------------------------------------------------------------------------------
 %                Commands for elements of Cover Letter
