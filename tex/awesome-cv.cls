@@ -90,6 +90,7 @@
   pdfsubject={},
   pdfkeywords={}
 }
+\RequirePackage{multicol}
 
 
 %-------------------------------------------------------------------------------
@@ -673,6 +674,26 @@
 \newcommand*{\cvskill}[2]{%
 	\skilltypestyle{#1} & \leavevmode\skillsetstyle{#2} \\
 }
+
+
+% Define an environment for cvextracourses
+\newenvironment{cvextracourses}{%
+  \vspace{\acvSectionContentTopSkip}
+  \vspace{-2.0mm}
+	\begin{multicols}{2}
+	\begin{itemize}
+	\itemsep-1.3ex 
+}{%
+    \end{itemize}\end{multicols}\par
+	\vspace{-3ex}
+}
+% Define a line of cv extra course
+% Usage: \cvextracourse{<name>}{<additional info>}
+\newcommand*{\cvextracourse}[2]{%
+	\item \skilltypestyle{#1} \skillsetstyle{#2}
+}
+
+
 
 % Define an environment for cvitems(for cventry)
 \newenvironment{cvitems}{%
